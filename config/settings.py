@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 
     'apps.user',
     'apps.common',
+    'apps.youtube',
 ]
 
 DJANGO_QUERY_COUNTER = {
