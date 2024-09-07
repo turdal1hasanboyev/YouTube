@@ -1,5 +1,6 @@
 YouTube Clone Proyektimizni boshlab oldik!
 
+
 Configuratsiya to'g'irlash
 
 Modellar Yozish 
@@ -16,7 +17,9 @@ Applar = {
 
 Modellar
 
+
 App Common
+
 
 BaseModel = {
     is_active
@@ -59,7 +62,9 @@ PlayList = {
     slug
 }
 
+
 App User
+
 
 User = {
     description
@@ -75,7 +80,9 @@ User = {
     favourite_social_network
 }
 
+
 App YouTube
+
 
 Content = {
     name
@@ -118,3 +125,14 @@ SavedForLater = {
     user
     content
 }
+
+
+Proyektni yakunlash Finish Project! Commitini qoldirish 
+
+Bugun Sana 07.09.2024-yil soat 1838
+
+Comment - "Default Settings in YouTube Clone Project!"
+
+Asia/Uzbekistan/Tashkent *location
+
+Developer Hasanboyev Turdali (python backend developer)

@@ -29,7 +29,7 @@ schema_view = get_schema_view(
    openapi.Info(
       title="YouTube API",
       default_version='v1',
-      description="YouTube description",
+      description="YouTube Description",
       terms_of_service="https://www.google.com/policies/terms/",
       contact=openapi.Contact(email="turdalihasanboyev70@gmail.com"),
       license=openapi.License(name="BSD License"),
@@ -53,6 +53,8 @@ urlpatterns = [
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
 
     path('api/user/', include('apps.user.api_urls')),
+    path('api/common/', include('apps.common.api_urls')),
+    path('api/youtube/', include('apps.youtube.api_urls')),
 ]
 
 handler404 = 'config.errors.page_not_found_view'
