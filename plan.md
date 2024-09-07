@@ -1,11 +1,10 @@
-YouTube Clone Proyektimizni boshlab oldik!
+'YouTube' clone proyektimizni boshlab oldik!
 
+Configuratsiya to'g'irlash!
 
-Configuratsiya to'g'irlash
+Modellar yozish! 
 
-Modellar Yozish 
-
-Api chiqarish barcha Modellarga 
+Api chiqarish barcha modellarga! 
 
 Proyektni yakunlash!
 
@@ -15,11 +14,9 @@ Applar = {
     youtube
 }
 
-Modellar
+Modellar!
 
-
-App Common
-
+App common!
 
 BaseModel = {
     is_active
@@ -57,14 +54,11 @@ Subscription = {
 }
 
 PlayList = {
-    user
     name
     slug
 }
 
-
-App User
-
+App user
 
 User = {
     description
@@ -80,13 +74,10 @@ User = {
     favourite_social_network
 }
 
-
-App YouTube
-
+App youtube
 
 Content = {
     name
-    author
     content_link
     slug
     description
@@ -95,13 +86,13 @@ Content = {
     tags
     category
     channel
-    language
+    content_language
     country
     like_count
     dislike_count
     play_list
     forward_count
-    published_at
+    premiere_date
 }
 
 Liked = {
@@ -126,10 +117,14 @@ SavedForLater = {
     content
 }
 
+Premiera = {
+    premiere_date
+    content
+}
 
-Proyektni yakunlash Finish Project! Commitini qoldirish 
+Proyektni yakunlash Finish Project! commitini qoldirish 
 
-Bugun Sana 07.09.2024-yil soat 1838
+Bugun sana 07.09.2024-yil soat 18:38
 
 Comment - "Default Settings in YouTube Clone Project!"
 
