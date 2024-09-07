@@ -8,7 +8,6 @@ Api chiqarish barcha Modellarga
 
 Proyektni yakunlash!
 
-
 Applar = {
     common
     user
@@ -40,7 +39,7 @@ Tag = {
 Channel = {
     author
     name
-    channellink
+    channel_link
     description
     image
 }
@@ -68,13 +67,14 @@ User = {
     followers_count 
     following_count 
     last_active 
-    favo
-    rite social network
+    favourite_social_network
 }
 App YouTube
 
 Content = {
     name
+    author
+    content_link
     slug
     description
     image
@@ -86,7 +86,7 @@ Content = {
     country
     like_count
     dislike_count
-    playlist
+    play_list
     forward_count
     published_at
 }
@@ -94,7 +94,7 @@ Content = {
 Liked = {
     user
     content
-    like or dislike
+    like_or_dislike
 }
 
 Comment = {
