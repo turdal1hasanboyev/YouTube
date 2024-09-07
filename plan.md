@@ -26,19 +26,23 @@ BaseModel = {
 
 Category = {
     name
+    slug
 }
 
 Country = {
     name
+    slug
 }
 
 Tag = {
     name
+    slug
 }
 
 Channel = {
     author
     name
+    slug
     channel_link
     description
     image
@@ -52,6 +56,7 @@ Subscription = {
 PlayList = {
     user
     name
+    slug
 }
 
 App User
@@ -69,6 +74,7 @@ User = {
     last_active 
     favourite_social_network
 }
+
 App YouTube
 
 Content = {
@@ -104,8 +110,8 @@ Comment = {
 }
 
 FriendRequest = {
-    to_user
     from_user
+    to_user
 }
 
 SavedForLater = {
