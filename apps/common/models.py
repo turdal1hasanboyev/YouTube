@@ -78,7 +78,7 @@ class Channel(BaseModel):
 
 class Subscription(BaseModel):
     user = models.ForeignKey(to='user.User', on_delete=models.CASCADE, null=True, blank=True, related_name='subscription_user')
-    channel = models.ForeignKey(to='Channel', on_delete=models.CASCADE, db_index=True, unique=True, null=True, blank=True, related_name='subscription_channel')
+    channel = models.ForeignKey(to='Channel', on_delete=models.CASCADE, db_index=True, null=True, blank=True, related_name='subscription_channel')
 
     def __str__(self):
         return f"{self.user}-{self.channel}"
