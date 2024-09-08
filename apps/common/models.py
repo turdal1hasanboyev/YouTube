@@ -21,7 +21,7 @@ class Category(BaseModel):
     slug = models.SlugField(max_length=225, unique=True, null=True, blank=True, db_index=True)
 
     def __str__(self):
-        return self.name
+        return f"{self.name}"
     
     def save(self, *args, **kwargs):  
         if not self.slug:
@@ -35,7 +35,7 @@ class Tag(BaseModel):
     slug = models.SlugField(max_length=225, unique=True, null=True, blank=True, db_index=True)
 
     def __str__(self):
-        return self.name
+        return f"{self.name}"
     
     def save(self, *args, **kwargs):  
         if not self.slug:
@@ -49,7 +49,7 @@ class Country(BaseModel):
     slug = models.SlugField(max_length=225, unique=True, null=True, blank=True, db_index=True)
 
     def __str__(self):
-        return self.name
+        return f"{self.name}"
     
     def save(self, *args, **kwargs):  
         if not self.slug:
@@ -67,7 +67,7 @@ class Channel(BaseModel):
     image = models.ImageField(upload_to='channel_image/', null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return f"{self.name}"
     
     def save(self, *args, **kwargs):  
         if not self.slug:
@@ -78,7 +78,7 @@ class Channel(BaseModel):
 
 class Subscription(BaseModel):
     user = models.ForeignKey(to='user.User', on_delete=models.CASCADE, null=True, blank=True, related_name='subscription_user')
-    channel = models.ForeignKey(to='Channel', on_delete=models.CASCADE, null=True, blank=True, related_name='subscription_channel')
+    channel = models.ForeignKey(to='Channel', on_delete=models.CASCADE, db_index=True, unique=True, null=True, blank=True, related_name='subscription_channel')
 
     def __str__(self):
         return f"{self.user}-{self.channel}"
@@ -89,10 +89,17 @@ class PlayList(BaseModel):
     slug = models.SlugField(max_length=225, unique=True, null=True, blank=True, db_index=True)
 
     def __str__(self):
-        return self.name
+        return f"{self.name}"
     
     def save(self, *args, **kwargs):  
         if not self.slug:
             self.slug = f"{slugify(self.name)}-{uuid.uuid4()}"
 
         return super().save(*args, **kwargs)
+
+
+class SubEmail(BaseModel):
+    sub_email = models.EmailField(unique=True, max_length=225, db_index=True, null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.id}-{self.sub_email}"
