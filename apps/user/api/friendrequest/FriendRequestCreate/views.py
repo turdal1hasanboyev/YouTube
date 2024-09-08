@@ -1,12 +1,12 @@
-from rest_framework.generics import ListCreateAPIView
+from rest_framework.generics import CreateAPIView
 
-from .serializers import FriendRequestLCSerializer
 from apps.user.models import FriendRequest
+from .serializers import FriendRequestCreateSerializer
 
 
-class FriendRequestLCView(ListCreateAPIView):
+class FriendRequestCreateView(CreateAPIView):
     queryset = FriendRequest.objects.all()
-    serializer_class = FriendRequestLCSerializer
+    serializer_class = FriendRequestCreateSerializer
 
     def get_queryset(self):
         return FriendRequest.objects.filter(is_active=True).select_related('sender', 'receiver')
