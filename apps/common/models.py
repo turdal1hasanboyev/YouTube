@@ -5,10 +5,10 @@ import uuid
 from django.template.defaultfilters import slugify
 
 from ckeditor.fields import RichTextField
-
+ 
 
 class BaseModel(models.Model):
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -78,10 +78,10 @@ class Channel(BaseModel):
 
 class Subscription(BaseModel):
     user = models.ForeignKey(to='user.User', on_delete=models.CASCADE, null=True, blank=True, related_name='subscription_user')
-    channel = models.ForeignKey(to='Channel', on_delete=models.CASCADE, db_index=True, null=True, blank=True, related_name='subscription_channel')
+    channel = models.ForeignKey(Channel, on_delete=models.CASCADE, db_index=True, null=True, blank=True, related_name='subscription_channel')
 
     def __str__(self):
-        return f"{self.user}-{self.channel}"
+        return f"{self.id}-{self.user}-{self.channel}"
     
 
 class PlayList(BaseModel):
@@ -103,3 +103,14 @@ class SubEmail(BaseModel):
 
     def __str__(self):
         return f"{self.id}-{self.sub_email}"
+
+
+class Contact(BaseModel):
+    author = models.ForeignKey('user.User', on_delete=models.CASCADE, null=True, blank=True, related_name='contact_author')
+    message = models.TextField(null=True, blank=True)
+    web_site = models.URLField(max_length=225, unique=True, null=True, blank=True)
+    email = models.EmailField(max_length=225, unique=True, null=True, blank=True)
+    phone_number = models.CharField(max_length=225, null=True, blank=True, unique=True)
+
+    def __str__(self):
+        return f"{self.id}-{self.author}-{self.web_site}-{self.email}-{self.phone_number}"
