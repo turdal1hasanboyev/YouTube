@@ -8,7 +8,9 @@ from apps.common.models import BaseModel
 
 
 class User(BaseModel, AbstractUser):
-    """User model"""
+    """
+    User model
+    """
 
     GENDER = (
         ('male', ('Male')),
