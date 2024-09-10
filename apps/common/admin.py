@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Category, Channel, Country, PlayList, Tag, Subscription, SubEmail, Contact
+from .models import Category, Channel, Country, PlayList, Tag, Subscription, SubEmail, Contact, Forward
 
 
 @admin.register(Category)
@@ -36,3 +36,4 @@ class ChannelAdmin(admin.ModelAdmin):
 admin.site.register(Subscription)
 admin.site.register(SubEmail)
 admin.site.register(Contact)
+admin.site.register(Forward)

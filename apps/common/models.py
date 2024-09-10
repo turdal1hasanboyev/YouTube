@@ -114,3 +114,14 @@ class Contact(BaseModel):
 
     def __str__(self):
         return f"{self.id}-{self.author}-{self.web_site}-{self.email}-{self.phone_number}"
+    
+
+class Forward(BaseModel):
+    sender = models.ForeignKey(to='user.User', on_delete=models.CASCADE, null=True, blank=True, related_name='sender_in_forward')
+    receiver = models.ForeignKey(to='user.User', on_delete=models.CASCADE, null=True, blank=True, related_name='receiver_in_forward')
+    message = RichTextField(null=True, blank=True)
+    link = models.URLField(unique=True, max_length=225, null=True, blank=True)
+    content = models.ForeignKey('youtube.Content', on_delete=models.CASCADE, null=True, blank=True, related_name='forward_in_content')
+
+    def __str__(self):
+        return f"{self.id}-{self.sender}-{self.receiver}"
