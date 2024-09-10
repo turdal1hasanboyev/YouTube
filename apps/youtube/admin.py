@@ -24,6 +24,7 @@ class ContentAdmin(admin.ModelAdmin):
 
     prepopulated_fields = {'slug': ('title',)}
 
+
 admin.site.register(Liked)
 admin.site.register(Comment)
 admin.site.register(SavedForLater)

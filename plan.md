@@ -8,8 +8,6 @@ Api chiqarish barcha modellarga!
 
 Proyektni yakunlash!
 
-App youtube
-
 Proyektni yakunlash Finish Project! commitini qoldirish 
 
 Bugun sana 07.09.2024-yil soat 18:38
