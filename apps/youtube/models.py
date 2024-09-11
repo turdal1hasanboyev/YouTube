@@ -30,6 +30,7 @@ class Content(BaseModel):
     like = models.IntegerField(default=0, null=True, blank=True)
     dislike = models.IntegerField(default=0, null=True, blank=True)
     forward = models.IntegerField(default=0, null=True, blank=True)
+    views = models.IntegerField(default=0, null=True, blank=True)
     premiere_date = models.DateField(null=True, blank=True)
     language = models.CharField(max_length=225, choices=LANGUAGE, null=True, blank=True)
     is_short_video = models.BooleanField(default=True, null=True, blank=True)

@@ -33,6 +33,12 @@ from .api.contact.ContactUpdate.views import ContactUpdateView
 from .api.contact.ContactRetrieve.views import ContactRetrieveView
 from .api.contact.ContactDestroy.views import ContactDestroyView
 
+from .api.forward.ForwardCreate.views import ForwardCreateView
+from .api.forward.ForwardDestroy.views import ForwardDestroyView
+from .api.forward.ForwardList.views import ForwardListView
+from .api.forward.ForwardRetrieve.views import ForwardRetrieveView
+from .api.forward.ForwardUpdate.views import ForwardUpdateView
+
 
 app_name = 'common'
 
@@ -69,4 +75,10 @@ urlpatterns = [
     path('contact_update/<int:pk>/', ContactUpdateView.as_view(), name='contact_update'),
     path('contact_retrieve/<int:pk>/', ContactRetrieveView.as_view(), name='contact_retrieve'),
     path('contact_destroy/<int:pk>/', ContactDestroyView.as_view(), name='contact_destroy'),
+
+    path('forward_create/', ForwardCreateView.as_view(), name='forward_create'),
+    path('forward_destroy/<int:pk>/', ForwardDestroyView.as_view(), name='forward_destroy'),
+    path('forward_list/', ForwardListView.as_view(), name='forward_list'),
+    path('forward_retrieve/<int:pk>/', ForwardRetrieveView.as_view(), name='forward_retrieve'),
+    path('forward_update/<int:pk>/', ForwardUpdateView.as_view(), name='forward_update'),
 ]
