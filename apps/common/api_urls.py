@@ -1,7 +1,11 @@
+from tkinter.font import names
+
 from django.urls  import path
 
 from .api.category.CategoryLC.views import CategoryLCView
 from .api.category.CategoryRUD.views import CategoryRUDView
+from .api.channel.ChannelRetrieve.views import ChannelRetrieveView
+from .api.channel.ChannelUpdate.views import ChannelUpdateView
 
 from .api.tag.TagLC.views import TagLCView
 from .api.tag.TagRUD.views import TagRUDView
@@ -14,6 +18,12 @@ from .api.playlist.PlayListRUD.views import PlayListRUDView
 
 from .api.subemail.SubEmailLC.views import SubEmailLCView
 from .api.subemail.SubEmailRUD.views import SubEmailRUDView
+
+from .api.channel.ChannelCreate.views import ChannelCreateView
+from .api.channel.ChannelRetrieve.views import ChannelRetrieveView
+from .api.channel.ChannelList.views import ChannelListView
+from .api.channel.ChannelUpdate.views import ChannelUpdateView
+from .api.channel.ChannelDestroy.views import ChannelDestroyView
 
 
 app_name = 'common'
@@ -33,4 +43,10 @@ urlpatterns = [
 
     path('sub_email_lc/', SubEmailLCView.as_view(), name='sub_email_lc'),
     path('sub_email_rud/<int:pk>/', SubEmailRUDView.as_view(), name='sub_email_rud'),
+
+    path('channel_create/', ChannelCreateView.as_view(), name='channel_create'),
+    path('channel_retrieve/<slug:slug>/', ChannelRetrieveView.as_view(), name='channel_retrieve'),
+    path('channel_list/', ChannelListView.as_view(), name="channel_list"),
+    path('channel_update/<slug:slug>/', ChannelUpdateView.as_view(), name='channel_update'),
+    path('channel_destroy/<slug:slug>/', ChannelDestroyView.as_view(), name='channel_destroy'),
 ]
