@@ -1,11 +1,7 @@
-from tkinter.font import names
-
 from django.urls  import path
 
 from .api.category.CategoryLC.views import CategoryLCView
 from .api.category.CategoryRUD.views import CategoryRUDView
-from .api.channel.ChannelRetrieve.views import ChannelRetrieveView
-from .api.channel.ChannelUpdate.views import ChannelUpdateView
 
 from .api.tag.TagLC.views import TagLCView
 from .api.tag.TagRUD.views import TagRUDView
@@ -30,6 +26,8 @@ from .api.subscription.SubscriptionList.views import SubscriptionListView
 from .api.subscription.SubscriptionDestroy.views import SubscriptionDestroyView
 from .api.subscription.SubscriptionRetrieve.views import SubscriptionRetrieveView
 from .api.subscription.SubscriptionUpdate.views import SubscriptionUpdateView
+
+from .api.contact.ContactCreate.views import ContactCreateView
 
 
 app_name = 'common'
@@ -61,4 +59,6 @@ urlpatterns = [
     path('subscription_destroy/<int:pk>/', SubscriptionDestroyView.as_view(), name='subscription_destroy'),
     path('subscription_retrieve/<int:pk>/', SubscriptionRetrieveView.as_view(), name='subscription_retrieve'),
     path('subscription_update/<int:pk>/', SubscriptionUpdateView.as_view(), name='subscription_update'),
+
+    path('contact_create/', ContactCreateView.as_view(), name='contact_create'),
 ]
