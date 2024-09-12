@@ -12,6 +12,12 @@ from .api.liked.LikedDestroy.views import LikedDestroyView
 from .api.liked.LikedCreate.views import LikedCreateView
 from .api.liked.LikedUpdate.views import LikedUpdateView
 
+from .api.comment.CommentRetrieve.views import CommentRetrieveView
+from .api.comment.CommentList.views import CommentListView
+from .api.comment.CommentCreate.views import CommentCreateView
+from .api.comment.CommentDestroy.views import CommentDestroyView
+from .api.comment.CommentUpdate.views import CommentUpdateView
+
 
 app_name = 'youtube'
 
@@ -27,4 +33,10 @@ urlpatterns = [
     path('liked_destroy/<int:pk>/', LikedDestroyView.as_view(), name='liked_destroy'),
     path('liked_create/', LikedCreateView.as_view(), name='liked_create'),
     path('liked_update/<int:pk>/', LikedUpdateView.as_view(), name='liked_update'),
+
+    path('comment_retrieve/<int:pk>/', CommentRetrieveView.as_view(), name='comment_retrieve'),
+    path('comment_list/', CommentListView.as_view(), name='comment_list'),
+    path('comment_create/', CommentCreateView.as_view(), name='comment_create'),
+    path('comment_destroy/<int:pk>/', CommentDestroyView.as_view(), name='comment_destroy'),
+    path('comment_update/<int:pk>/', CommentUpdateView.as_view(), name='comment_update'),
 ]
